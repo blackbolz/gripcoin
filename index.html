@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRIP COIN - $GRIP</title>
+    <title>gripcoin</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Comic+Neue:wght@300;400;700&family=Creepster&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -398,6 +399,89 @@
             box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
         }
 
+        /* GIF Section */
+        .gif-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            text-align: center;
+        }
+
+        .gif-container {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .gif-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            transform: rotate(90deg);
+        }
+
+        .gif-image.playing {
+            opacity: 1;
+        }
+
+        .goon-btn {
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #ffd700);
+            border: none;
+            padding: 20px 50px;
+            border-radius: 50px;
+            color: white;
+            font-family: 'Creepster', cursive;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .goon-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s;
+        }
+
+        .goon-btn:hover::before {
+            left: 100%;
+        }
+
+        .goon-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.6);
+            animation: goonShake 0.5s ease-in-out;
+        }
+
+        .goon-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        @keyframes goonShake {
+            0%, 100% { transform: translateY(-5px) scale(1.05) rotate(0deg); }
+            25% { transform: translateY(-5px) scale(1.05) rotate(-2deg); }
+            75% { transform: translateY(-5px) scale(1.05) rotate(2deg); }
+        }
+
+        .gif-controls {
+            margin-top: 20px;
+            font-family: 'Comic Neue', cursive;
+            color: #ff69b4;
+            font-size: 1.1rem;
+        }
+
         /* Contract Address Section */
         .contract-section {
             background: rgba(255, 105, 180, 0.1);
@@ -688,6 +772,16 @@
                 width: 28px;
                 height: 28px;
             }
+
+            .goon-btn {
+                font-size: 1.5rem;
+                padding: 15px 35px;
+            }
+
+            .gif-container {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
         }
     </style>
 </head>
@@ -784,10 +878,6 @@
                     <div class="feature">
                         <h3>🔒 Locked Liquidity</h3>
                         <p>100% locked for maximum security</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🔥 Deflationary</h3>
-                        <p>Supply burns with every transaction</p>
                     </div>
                     <div class="feature">
                         <h3>👥 Community Driven</h3>
@@ -907,9 +997,27 @@
         </div>
     </section>
 
-    <footer>
-    
+    <!-- New GIF Section -->
+    <section class="gif-section">
+        <div class="container">
+            <div class="gif-container">
+                <img src="images/jerk.gif" 
+                     alt="Goon GIF" 
+                     class="gif-image" 
+                     id="goonGif"
+                     style="display: none;">
+                <div class="gif-controls" id="gifStatus">
+                    <!-- Text will be updated by JavaScript -->
+                </div>
+            </div>
+            <button class="goon-btn" onclick="playGif()">
+                GOON NOW
+            </button>
+        </div>
+    </section>
 
+    <footer>
+        <div class="container">
             <!-- Coming Soon Section -->
             <div class="coming-soon-section">
                 <div class="coming-soon-box">
@@ -943,6 +1051,29 @@
     </footer>
 
     <script>
+        // Function to play the GIF
+        function playGif() {
+            const gif = document.getElementById('goonGif');
+            const status = document.getElementById('gifStatus');
+            const btn = document.querySelector('.goon-btn');
+            
+            if (gif.style.display === 'none') {
+                // Show and play the GIF
+                gif.style.display = 'block';
+                gif.classList.add('playing');
+                status.textContent = '💦 GOONING IN PROGRESS... 💦';
+                btn.textContent = 'STOP GOONING';
+                btn.style.background = 'linear-gradient(45deg, #ff4444, #cc0000)';
+            } else {
+                // Hide the GIF
+                gif.style.display = 'none';
+                gif.classList.remove('playing');
+                status.textContent = '';
+                btn.textContent = 'GOON NOW';
+                btn.style.background = 'linear-gradient(45deg, #ff69b4, #ff1493, #ffd700)';
+            }
+        }
+
         // Function to copy contract address
         function copyContractAddress() {
             const contractAddress = document.getElementById('contractAddress').textContent;
