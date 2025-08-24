@@ -398,6 +398,152 @@
             box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
         }
 
+        /* Contract Address Section */
+        .contract-section {
+            background: rgba(255, 105, 180, 0.1);
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contract-section h3 {
+            color: #ff69b4;
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contract-address-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contract-address {
+            background: rgba(26, 26, 26, 0.8);
+            border: 2px solid rgba(255, 105, 180, 0.5);
+            border-radius: 15px;
+            padding: 15px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #ff69b4;
+            min-width: 300px;
+            word-break: break-all;
+            transition: all 0.3s;
+        }
+
+        .contract-address:hover {
+            border-color: #ff69b4;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .copy-btn {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            border: none;
+            border-radius: 12px;
+            padding: 15px 25px;
+            color: white;
+            font-family: 'Comic Neue', cursive;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 54px;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+        }
+
+        .copy-btn:active {
+            transform: translateY(0);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+        }
+
+        .copy-icon {
+            font-size: 16px;
+        }
+
+        /* Coming Soon Section */
+        .coming-soon-section {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .coming-soon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .coming-soon-text {
+            background: rgba(26, 26, 26, 0.8);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 12px;
+            padding: 12px 25px;
+            font-family: 'Comic Neue', cursive;
+            font-size: 16px;
+            color: #ffd700;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .coming-soon-text:hover {
+            border-color: #ffd700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .coming-soon-copy-btn {
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+            border: none;
+            border-radius: 12px;
+            padding: 12px 20px;
+            color: #1a1a1a;
+            font-family: 'Comic Neue', cursive;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 48px;
+        }
+
+        .coming-soon-copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .coming-soon-copy-btn:active {
+            transform: translateY(0);
+        }
+
+        .coming-soon-copy-btn.copied {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+        }
+
         /* Footer */
         footer {
             background: #1a1a1a;
@@ -414,8 +560,8 @@
         }
 
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(45deg, #ff69b4, #ff1493);
             border-radius: 50%;
             display: flex;
@@ -433,8 +579,8 @@
         }
 
         .social-link img {
-            width: 24px;
-            height: 24px;
+            width: 32px;
+            height: 32px;
             object-fit: contain;
             filter: brightness(0) invert(1); /* Makes PNG images white */
         }
@@ -513,6 +659,34 @@
 
             .milestone-content {
                 margin: 0;
+            }
+
+            .contract-address-box {
+                flex-direction: column;
+            }
+
+            .contract-address {
+                min-width: 280px;
+                font-size: 12px;
+            }
+
+            .coming-soon-box {
+                flex-direction: column;
+            }
+
+            .coming-soon-text {
+                min-width: 280px;
+                font-size: 14px;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+            }
+
+            .social-link img {
+                width: 28px;
+                height: 28px;
             }
         }
     </style>
@@ -633,25 +807,18 @@
                     <p>Total Supply</p>
                 </div>
                 <div class="token-stat">
-                    <h3>3%</h3>
+                    <h3>0%</h3>
                     <p>Buy Tax</p>
                 </div>
                 <div class="token-stat">
-                    <h3>3%</h3>
+                    <h3>0%</h3>
                     <p>Sell Tax</p>
                 </div>
                 <div class="token-stat">
                     <h3>100%</h3>
                     <p>Liquidity Locked</p>
                 </div>
-                <div class="token-stat">
-                    <h3>0%</h3>
-                    <p>Team Tokens</p>
-                </div>
-                <div class="token-stat">
-                    <h3>1%</h3>
-                    <p>Burn Rate</p>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -663,22 +830,22 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Get a Wallet</h3>
-                    <p>Download MetaMask or Trust Wallet from the app store or google chrome extension store. Fund your wallet with SOL.</p>
+                    <p>Download Phantom or OKX Wallet from the app store or google chrome extension store. Fund your wallet with SOL.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Go to Uniswap</h3>
-                    <p>Connect your wallet to Uniswap. You can also buy directly on our website using our swap widget.</p>
+                    <h3>Go to pump.fun</h3>
+                    <p>Connect your wallet to pump.fun. You can also buy directly on our website using our swap widget.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Swap ETH for $GRIP</h3>
-                    <p>Paste the $GRIP token address and swap your SOL for $GRIP. Set slippage to 5-10%.</p>
+                    <h3>Swap SOL for $gripcoin</h3>
+                    <p>Paste the $gripcoin token address from the bottom of this page and swap your SOL for $gripcoin. Set slippage to 5-10%.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <h3>HODL & GRIP!</h3>
-                    <p>Congratulations! You're now a GRIP holder. Join our community and never let go! 💎</p>
+                    <p>Congratulations! You're now a gripcoin holder. Join our community and never let go! 💎</p>
                 </div>
             </div>
         </div>
@@ -741,19 +908,33 @@
     </section>
 
     <footer>
-        <div class="container">
+    
+
+            <!-- Coming Soon Section -->
+            <div class="coming-soon-section">
+                <div class="coming-soon-box">
+                    <div class="coming-soon-text" id="comingSoonText">
+                        Coming Soon
+                    </div>
+                    <button class="coming-soon-copy-btn" onclick="copyComingSoon()">
+                        <span class="copy-icon">📋</span>
+                        <span id="comingSoonCopyText">Copy</span>
+                    </button>
+                </div>
+            </div>
+
             <div class="social-links">
                 <a href="https://x.com" class="social-link">
                     <!-- Replace with your Twitter icon PNG -->
                     <img src="images/x.png" alt="Twitter" onerror="this.style.display='none'; this.parentNode.innerHTML='🐦';">
                 </a>
                 <a href="https://dexscreener.com" class="social-link">
-                    <!-- Replace with your Telegram icon PN G -->
-                    <img src="images/dex.png" alt="Telegram" onerror="this.style.display='none'; this.parentNode.innerHTML='💬';">
+                    <!-- Replace with your Telegram icon PNG -->
+                    <img src="images/dex.png" alt="Dexscreener" onerror="this.style.display='none'; this.parentNode.innerHTML='💬';">
                 </a>
                 <a href="https://pump.fun/board" class="social-link">
                     <!-- Replace with your Discord icon PNG -->
-                    <img src="images/pump.png" alt="Discord" onerror="this.style.display='none'; this.parentNode.innerHTML='💬';">
+                    <img src="images/pump.png" alt="Pump.fun" onerror="this.style.display='none'; this.parentNode.innerHTML='💬';">
                 </a>
             </div>
             <p>&copy; 2025 GRIP COIN. All rights reserved. Grip tight. Never let go</p>
@@ -762,6 +943,78 @@
     </footer>
 
     <script>
+        // Function to copy contract address
+        function copyContractAddress() {
+            const contractAddress = document.getElementById('contractAddress').textContent;
+            const copyBtn = document.querySelector('.copy-btn');
+            const copyText = document.getElementById('copyText');
+            
+            navigator.clipboard.writeText(contractAddress).then(function() {
+                // Success feedback
+                copyBtn.classList.add('copied');
+                copyText.textContent = 'Copied!';
+                
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    copyBtn.classList.remove('copied');
+                    copyText.textContent = 'Copy';
+                }, 2000);
+            }).catch(function(err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = contractAddress;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Success feedback
+                copyBtn.classList.add('copied');
+                copyText.textContent = 'Copied!';
+                
+                setTimeout(() => {
+                    copyBtn.classList.remove('copied');
+                    copyText.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
+        // Function to copy "coming soon" text
+        function copyComingSoon() {
+            const comingSoonText = document.getElementById('comingSoonText').textContent;
+            const copyBtn = document.querySelector('.coming-soon-copy-btn');
+            const copyText = document.getElementById('comingSoonCopyText');
+            
+            navigator.clipboard.writeText(comingSoonText).then(function() {
+                // Success feedback
+                copyBtn.classList.add('copied');
+                copyText.textContent = 'Copied!';
+                
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    copyBtn.classList.remove('copied');
+                    copyText.textContent = 'Copy';
+                }, 2000);
+            }).catch(function(err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = comingSoonText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Success feedback
+                copyBtn.classList.add('copied');
+                copyText.textContent = 'Copied!';
+                
+                setTimeout(() => {
+                    copyBtn.classList.remove('copied');
+                    copyText.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -842,3 +1095,15 @@
 
         // Add CSS for ripple animation
         const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
